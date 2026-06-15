@@ -14,4 +14,4 @@ RUN chown odoo:odoo /etc/odoo/odoo.conf && \
 USER odoo
 
 # الأمر النهائي لـ Render: تنظيف الأصول المكسورة من Supabase أولاً ثم تشغيل السيرفر فوراً
-CMD psql "postgres://USER:PASSWORD@HOST:PORT/odoo_em2k" -c "DELETE FROM ir_attachment WHERE url LIKE '/web/content/%assets_%';" && odoo
+CMD psql "postgresql://odoo_user:thyx8PUOAyjMNxbh8stJl9AT38v8Q4AS@dpg-d8n62tjtqb8s73cqdmu0-a/odoo_em2k" -c "DELETE FROM ir_attachment WHERE url LIKE '/web/content/%assets_%';" && odoo
