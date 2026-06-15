@@ -10,3 +10,5 @@ USER odoo
 
 # الأمر النهائي: إجبار Odoo على تحديث موديول الويب لإعادة بناء الـ Filestore المفقود تلقائياً
 CMD ["odoo", "-c", "/etc/odoo/odoo.conf", "-u", "web", "--workers=0"]
+
+COPY ./custom_addons /mnt/extra-addons
