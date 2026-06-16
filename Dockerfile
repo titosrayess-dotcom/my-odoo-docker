@@ -12,3 +12,6 @@ USER odoo
 CMD ["odoo", "-c", "/etc/odoo/odoo.conf", "-u", "web", "--workers=0"]
 
 COPY ./custom_addons /mnt/extra-addons
+USER root
+RUN chown -R odoo:odoo /var/lib/odoo
+USER odoo
