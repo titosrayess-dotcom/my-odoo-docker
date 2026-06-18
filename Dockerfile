@@ -15,3 +15,12 @@ COPY ./custom_addons /mnt/extra-addons
 USER root
 RUN chown -R odoo:odoo /var/lib/odoo
 USER odoo
+USER root
+
+# إعطاء الصلاحيات لمجلد ملفات أودو المخزنة
+RUN chown -R odoo:odoo /var/lib/odoo && chmod -R 755 /var/lib/odoo
+
+# إعطاء الصلاحيات لمجلد الكود والموديلات لمنع خطأ Unallowed to fetch files
+RUN chown -R odoo:odoo /usr/lib/python3/dist-packages/odoo/addons
+
+USER odoo
